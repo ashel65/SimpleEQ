@@ -240,7 +240,7 @@ void updateCoefficients(Coefficients& old, const Coefficients& replacements)
     *old = *replacements;
 }
 
-void SimpleEQAudioProcessor::updateLowCutFilters(const ChainSettings& chainSettings)
+void SimpleEQAudioProcessor::updateLowCutFilters(const ChainSettings &chainSettings)
 {
     auto lowCutCoefficients = makeLowCutFilter(chainSettings, getSampleRate());
 
@@ -251,7 +251,7 @@ void SimpleEQAudioProcessor::updateLowCutFilters(const ChainSettings& chainSetti
     updateCutFilter(rightLowCut, lowCutCoefficients, chainSettings.lowCutSlope);
 }
 
-void SimpleEQAudioProcessor::updateHighCutFilters(const ChainSettings& chainSettings)
+void SimpleEQAudioProcessor::updateHighCutFilters(const ChainSettings &chainSettings)
 {
     auto highCutCoefficients = makeHighCutFilter(chainSettings, getSampleRate());
 
