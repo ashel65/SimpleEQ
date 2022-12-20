@@ -94,13 +94,13 @@ void ResponseCurveComponent::paint(juce::Graphics& g)
             mag *= lowcut.get<3>().coefficients->getMagnitudeForFrequency(freq, sampleRate);
 
         if (!highcut.isBypassed<0>())
-            mag *= lowcut.get<0>().coefficients->getMagnitudeForFrequency(freq, sampleRate);
+            mag *= highcut.get<0>().coefficients->getMagnitudeForFrequency(freq, sampleRate);
         if (!highcut.isBypassed<1>())
-            mag *= lowcut.get<1>().coefficients->getMagnitudeForFrequency(freq, sampleRate);
+            mag *= highcut.get<1>().coefficients->getMagnitudeForFrequency(freq, sampleRate);
         if (!highcut.isBypassed<2>())
-            mag *= lowcut.get<2>().coefficients->getMagnitudeForFrequency(freq, sampleRate);
+            mag *= highcut.get<2>().coefficients->getMagnitudeForFrequency(freq, sampleRate);
         if (!highcut.isBypassed<3>())
-            mag *= lowcut.get<3>().coefficients->getMagnitudeForFrequency(freq, sampleRate);
+            mag *= highcut.get<3>().coefficients->getMagnitudeForFrequency(freq, sampleRate);
 
         mags[i] = Decibels::gainToDecibels(mag);
     }
